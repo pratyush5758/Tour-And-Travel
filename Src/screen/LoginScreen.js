@@ -31,25 +31,8 @@ const LoginScreen = () => {
           pack travel essentials.
         </Text>
       </View>
-      <View
-        style={{
-          backgroundColor: '#08c1ce',
-          height: 410,
-          width: 210,
-          marginLeft: 220,
-          marginVertical: 20,
-          borderTopLeftRadius: 700,
-          borderBottomLeftRadius: 700,
-        }}></View>
-      <View
-        style={{
-          backgroundColor: '#e99265',
-          height: 500,
-          width: 270,
-          marginTop: -150,
-
-          borderTopRightRadius: 700,
-        }}></View>
+      <View style={styles.mainbgcolor}></View>
+      <View style={styles.prebgcolor}></View>
       <View style={{marginTop: -690}}>
         <ImageBackground
           source={IMAGES.TRAVEL}
@@ -117,13 +100,12 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   Buttom: {
-    // marginTop: 350,
     backgroundColor: '#00BAC7',
     alignItems: 'center',
     height: 90,
     width: 90,
     borderRadius: 60,
-    // marginHorizontal: 180,
+
     padding: 25,
     margin: 10,
   },
@@ -140,5 +122,22 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
+  },
+  mainbgcolor: {
+    backgroundColor: '#08c1ce',
+    height: 410,
+    width: 210,
+    marginLeft: 220,
+    marginVertical: 20,
+    borderTopLeftRadius: 700,
+    borderBottomLeftRadius: 700,
+  },
+  prebgcolor: {
+    backgroundColor: '#e99265',
+    height: 500,
+    width: 270,
+    marginTop: -150,
+
+    borderTopRightRadius: 700,
   },
 });
