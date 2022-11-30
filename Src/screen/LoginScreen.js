@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 170,
     borderRadius: 60,
     borderColor: '#00BAC7',
+   
   },
   GoButtom: {
     color: '#fff',
