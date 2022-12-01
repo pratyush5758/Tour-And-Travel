@@ -8,8 +8,10 @@ import {
 } from 'react-native';
 import React from 'react';
 import {IMAGES} from '../assets';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <View style={styles.mainview}>
@@ -38,7 +40,7 @@ const LoginScreen = () => {
           source={IMAGES.TRAVEL}
           style={{width: 480, height: 500}}>
           <View style={styles.BtnShadow}>
-            <TouchableOpacity style={styles.Buttom}>
+            <TouchableOpacity style={styles.Buttom} onPress={() => navigation.navigate('HomeScreen')}>
               <Text style={styles.GoButtom}>GO</Text>
             </TouchableOpacity>
           </View>

@@ -6,6 +6,7 @@
  * @flow strict-local
  */
 
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
 import {
@@ -31,7 +32,10 @@ const App = () => {
   
 
   return (
+    <NavigationContainer>
+
     <Routes/>
+    </NavigationContainer>
   );
 };
 

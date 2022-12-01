@@ -6,6 +6,8 @@ import {
   Image,
   TextInput,
   FlatList,
+  TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import React from 'react';
 
@@ -13,30 +15,70 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {IMAGES} from '../assets';
+import {useNavigation} from '@react-navigation/native';
 const Hotel_name = [
   {
     id: 'Hotel_1',
-    image: IMAGES.GOA,
+    image: IMAGES.SUNSET,
     title: 'Valley Of Dream',
     Name: 'New Mexico',
+    icon: <AntDesign name="star" size={25} />,
+    icontem: <AntDesign name="cloud" size={25} />,
+    icondir: <Entypo name="location-pin" size={25} />,
+    rate: 4.8,
+    rating: '2k rating',
+    celcius: '20c',
+    temp: 'Temperature',
+    km: '7.2km',
+    dire: 'Direction',
+    known: 'Know Detail',
+    review: 'Reviews(46)',
+    text: 'The hotel industry is one of the most important components of the wider service industry, catering for customers who require overnight accommodation. It is closely associated with the travel industry and the hospitality industry, although there are notable differences in scope.',
   },
   {
     id: 'Hotel_2',
     image: IMAGES.THILAND,
     title: 'Nusa Penida',
     Name: 'New Dubai',
+    icon: <AntDesign name="star" size={25} />,
+    icontem: <AntDesign name="cloud" size={25} />,
+    icondir: <Entypo name="location-pin" size={25} />,
+    rate: 4.8,
+    rating: '2k rating',
+    celcius: '20c',
+    temp: 'Temperature',
+    km: '7.2km',
+    dire: 'Direction',
+    known: 'Know Detail',
+    review: 'Reviews(46)',
+    text: 'The hotel industry is one of the most important components of the wider service industry, catering for customers who require overnight accommodation. It is closely associated with the travel industry and the hospitality industry, although there are notable differences in scope.',
   },
   {
     id: 'Hotel_3',
     image: IMAGES.MUMBAI,
     title: 'Nusa Penida',
     Name: 'Mumbai',
+    icon: <AntDesign name="star" size={25} />,
+    icontem: <AntDesign name="cloud" size={25} />,
+    icondir: <Entypo name="location-pin" size={25} />,
+    rate: 4.8,
+    rating: '2k rating',
+    celcius: '20c',
+    temp: 'Temperature',
+    km: '7.2km',
+    dire: 'Direction',
+    known: 'Know Detail',
+    review: 'Reviews(46)',
+    text: 'The hotel industry is one of the most important components of the wider service industry, catering for customers who require overnight accommodation. It is closely associated with the travel industry and the hospitality industry, although there are notable differences in scope.',
+  
   },
 ];
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <View style={styles.Header}>
         <View style={styles.Headerview}>
           <Text style={styles.Discover}>Discover </Text>
@@ -81,16 +123,21 @@ const HomeScreen = () => {
         data={Hotel_name}
         horizontal={true}
         renderItem={({item}) => (
-          <View style={styles.FourthContainerview}>
-            <View style={styles.ImageContainerview}>
-              <Image source={item.image} style={styles.ValleyImg} />
-              <Text style={styles.Valley}>{item.title}</Text>
-              <View style={styles.city}>
-                <Entypo name="location-pin" size={20} color={'#000'} />
-                <Text style={styles.New}>{item.Name}</Text>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('DetailsScreen', {Detail: item})
+            }>
+            <View style={styles.FourthContainerview}>
+              <View style={styles.ImageContainerview}>
+                <Image source={item.image} style={styles.ValleyImg} />
+                <Text style={styles.Valley}>{item.title}</Text>
+                <View style={styles.city}>
+                  <Entypo name="location-pin" size={20} color={'#000'} />
+                  <Text style={styles.New}>{item.Name}</Text>
+                </View>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </SafeAreaView>

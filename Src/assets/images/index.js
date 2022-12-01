@@ -7,4 +7,5 @@ export default{
     GOA : require('./Goa.jpg'),
     THILAND : require('./Thiland.jpg'),
     MUMBAI : require('./Mumbai.jpg'),
+    SUNSET : require('./Sunset.jpg'),
 }
